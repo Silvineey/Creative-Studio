@@ -1,0 +1,61 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+body{
+    width: 100%;
+    background-color: #F5F5F5;
+}
+.conteiner{
+    display: flex;
+    justify-content: center;
+}
+.caixa{
+    background-color: #efe6e6;
+    align-items: center;
+    width: 500px;
+    border-radius: 25px;
+    padding: 5em;
+    border: black 1px solid;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+.caixa input{
+    border: none;
+    border-radius: 25px;
+    padding: 0.5em;
+    width: 200px;
+}
+
+h1{
+    font-size: 44px;
+    margin: 1em;
+    text-align: center;
+
+}
+.senha{
+    display: flex;
+    justify-content: end;
+}
+.senha p{
+    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.senha p:hover{
+    transform: translateX(-5px);
+    cursor: pointer;
+    text-decoration: underline;
+}
+.botao button{
+    background-color: rgb(48, 144, 222);
+    padding: 0.8em;
+    color: white;
+    font-weight: 800;
+    border-radius: 25px;
+}
+.botao button:hover{
+    background-color: rgb(91, 212, 228);
+    cursor: pointer;
+}

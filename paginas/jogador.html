@@ -7,6 +7,7 @@
     <title>Pagina de criação</title>
     <link rel="stylesheet" href="../stylos/header.css">
     <link rel="stylesheet" href="../stylos/criacao.css">
+    <link rel="stylesheet" href="../stylos/jogador.css">
     <script defer src="../codigos/script.js"></script>
 </head>
 
@@ -39,18 +40,27 @@
         </div>
 
         <div class="novato oculto">
-            <h2 id="saida">Escolha sua classe</h2>
+            <h2 style="text-align: center;">Classes Físicas</h2>
             <div class="escolhas botoes">
-                <div>
-                    <button value="1" onmouseover="galeria(this)">Classe 1</button>
-                    <button value="2" onmouseover="galeria(this)">Classe 2</button>
-                    <button value="3" onmouseover="galeria(this)">Classe 3</button>
+                <div id="fisicas" class="classe">
+
                 </div>
                 <div class="personagens">
                     <img src="../assets/teste1.png" class="ativo" alt="">
                     <img src="../assets/teste2.png" class="oculto" alt="">
                     <img src="../assets/teste3.png" class="oculto" alt="">
                 </div>
+            </div>
+        </div>
+        <div class="novato oculto">
+            <h2>Classes Mágicas</h2>
+            <div class="escolhas botoes">
+                <div id="magicas" class="classe">
+
+                </div>
+            </div>
+            <div class="personagens">
+
             </div>
         </div>
     </main>

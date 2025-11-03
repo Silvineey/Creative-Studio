@@ -7,6 +7,7 @@
     <title>Creative Studio</title>
     <link rel="stylesheet" href="stylos/header.css">
     <link rel="stylesheet" href="stylos/home.css">
+    <script defer src="../codigos/login.js"></script>
 </head>
 
 <body>
@@ -22,14 +23,24 @@
                     <li><a href="galeria.html">Galeria</a></li>
                     <li><a href="desenvolvedor.html">Área do desenvolvedor</a></li>
                     <li><a href="sobre.html">Sobre</a></li>
+                    <li class="sublogin">
+                        <img  onmouseover="login()" src="assets/login.png" alt="">
+                        <ol onmouseleave="sumir()" class="opcoes oculto">
+                            <p>Já é membro?</p>
+                            <li><a onclick="abrirlogin()">Logar</a></li>
+                            <li><a onclick="abrircadastro()">Cadastrar</a></li>
+                        </ol>
+                    </li>
                 </ol>
+                <div>
+                </div>
             </nav>
         </header>
         <div class="personagens">
             <img src="assets/Personagens.png" alt="">
         </div>
         <div class="cinza">
-            <div>
+            <div class="login">
                 <img src="assets/logo.png" alt="">
             </div>
             <div>

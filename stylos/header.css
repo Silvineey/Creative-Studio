@@ -32,7 +32,7 @@ header{
 header .navbar{
     text-align: center;
     display: flex;
-    gap: 3em;
+    gap: 2em;
     font-weight: 800;
     font-size: 15px;
     margin-top: 1em;
@@ -50,4 +50,36 @@ header .navbar li:hover{
     cursor: pointer;
     text-decoration: underline;
     transform: scale(1.1);
+}
+.sublogin{
+    width: 120px;
+    position: relative;
+    color: white;
+    font-weight: 800;
+}
+.sublogin img{
+    width: 40px;
+}
+.sublogin img{
+    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.sublogin img:hover{
+    transform: rotate(90deg) scale(1.1);
+}
+.opcoes{
+    top: 100%;
+    right: 0;
+    text-align: center;
+    position: absolute;
+}
+.oculto{
+    visibility: hidden;
+    opacity: 0;
+    transition: all 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.ativo{
+    cursor: pointer;
+    display: block;
+    opacity: 1;
+    visibility: visible;
 }

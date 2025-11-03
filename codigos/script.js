@@ -1,18 +1,21 @@
+
 function jogador(){
     window.location.href="../paginas/jogador.html"
 }
 function novato(){
     const menu=document.querySelector(".menu")
-    const novato=document.querySelector(".novato")
+    const novato=document.querySelectorAll(".novato")
     menu.classList.add("oculto")
-    novato.classList.remove("oculto")
     setTimeout(() => {
         menu.style.display="none"
-    }, 1500);
+    }, 1200);
+    novato.forEach(novatos=>{
+        novatos.classList.remove("oculto")
+        novatos.classList.add("ativo")
+    })
 }
 function galeria(indice){
     let id=indice.value
-    let saida=document.getElementById("saida")
     console.log(id)
     const img=document.querySelectorAll(".personagens img")
     img.forEach(imgs=>{
@@ -21,13 +24,36 @@ function galeria(indice){
     })
     img[id-1].classList.remove("oculto")
     img[id-1].classList.add("ativo")
-    if(id==="1"){
-        saida.textContent="Guerreiro"
-    }
-    else if(id==="2"){
-        saida.textContent="Classe 2"
-    }
-    else if(id==="3"){
-        saida.textContent="Classe 3"
+}
+
+
+const classes={
+    iniciante:{
+        fisicas:["Guerreiro", "Arqueiro", "Ladino", "Bárbaro", "Caçador","Monge"],
+        magicas:["Feiticeiro","Clérigo","Druída"],
+        hibrico:["Suporte","Paladino","Bardo"]
     }
 }
+
+function rendernovato(){
+    const classesf=classes.iniciante.fisicas
+    const classesm=classes.iniciante.magicas
+    const classesh=classes.iniciante.magicas
+    classesf.forEach((classes,i)=>{
+        const div=document.getElementById("fisicas");
+        const selecao=document.createElement("button");
+        selecao.innerHTML=classes;
+        selecao.value=i+1;
+        selecao.onmouseover=()=>galeria(selecao);
+        div.appendChild(selecao);;
+    })
+    classesm.forEach((classes,i)=>{
+        const div=document.getElementById("magicas");
+        const selecao=document.createElement("button");
+        selecao.innerHTML=classes;
+        selecao.value=i+1;
+        selecao.onmouseover=()=>galeria(selecao)
+        div.appendChild(selecao)
+    })    
+}
+rendernovato()
