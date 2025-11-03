@@ -1,0 +1,59 @@
+body{
+    background-color: black;
+    color: white;
+    font-weight: 800;
+}
+.caixa{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10%;
+}
+.botoes{
+    margin-top: 1em;
+    display: flex;
+    gap: 2em;
+    justify-content: center;
+}
+.botoes button{
+    padding: 0.9em;
+    border-radius: 25px;
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-weight: 800;
+    border: solid 1px white;
+    transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.botoes button:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+.novato{
+    position: relative;
+    text-align: center;
+}
+.escolhas{
+    justify-content: space-evenly;
+    display: flex;
+}
+.novato img{
+    width: 300px;
+}
+.personagens img{
+    position: absolute;
+    border: 1px solid white;
+    border-radius: 25px;
+    padding: 1em;
+}
+.ativo{
+    visibility: visible;
+    opacity: 1;
+    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.oculto{
+    pointer-events: none;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}

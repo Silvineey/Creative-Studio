@@ -1,0 +1,25 @@
+.personagens{
+    display: flex;
+    justify-content: center;
+    margin-top: 1em;
+}
+.cinza{
+    align-items: center;
+    background-color: #1A1C1E;
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+    font-weight: 800;
+    font-size: 20px;
+    margin-top: -10px;
+}
+.cinza img{
+    width: 135px;
+    transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.cinza img:hover{
+    transform: translateY(-10px);
+    cursor: pointer;
+}
