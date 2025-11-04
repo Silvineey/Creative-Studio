@@ -14,7 +14,7 @@ function abrirlogin(){
     window.open(
         "../paginas/login.html",
         "loginPopup",
-        "width=600, height=600, top=100, left=50, resizable=yes"
+        "width=800, height=600, top=300, left=50, resizable=yes"
     )
 }
 

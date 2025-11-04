@@ -1,7 +1,12 @@
 body{
-    background-color: black;
+    background: url("../assets/Rectangle\ 7.png");
     color: white;
     font-weight: 800;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
 }
 .caixa{
     display: flex;
@@ -30,11 +35,11 @@ body{
     transform: scale(1.1);
 }
 .novato{
+    flex-wrap: wrap;
     position: relative;
     text-align: center;
 }
 .escolhas{
-    justify-content: space-evenly;
     display: flex;
 }
 .novato img{
@@ -56,4 +61,12 @@ body{
     visibility: hidden;
     opacity: 0;
     transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.casual{
+    flex-wrap: wrap;
+    position: relative;
+    text-align: center;
+}
+.casual img{
+    width: 300px;
 }
