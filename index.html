@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="stylos/header.css">
     <link rel="stylesheet" href="stylos/home.css">
     <script defer src="../codigos/login.js"></script>
+    <link rel="stylesheet" href="stylos/login.css">
 </head>
 
 <body>
@@ -23,12 +24,12 @@
                     <li><a href="galeria.html">Galeria</a></li>
                     <li><a href="desenvolvedor.html">Área do desenvolvedor</a></li>
                     <li><a href="sobre.html">Sobre</a></li>
-                    <li class="sublogin">
-                        <a  onmouseover="login()">Logar</a>
-                        <ol onmouseleave="sumir()" class="opcoes oculto">
+                    <li onmouseleave="sumir()" onmouseover="rendermenu()" class="sublogin">
+                        <a>Logar</a>
+                        <ol  class="opcoes oculto">
                             <p>Já é membro?</p>
-                            <li><a onclick="abrirlogin()">Logar</a></li>
-                            <li><a onclick="abrircadastro()">Cadastrar</a></li>
+                            <li><a onclick="renderlogin()">Logar</a></li>
+                            <li><a href="">Cadastrar</a></li>
                         </ol>
                     </li>
                 </ol>
@@ -53,6 +54,29 @@
                     para dar vida a cada visão <br> criativa.
                 </p>
             </div>
+        </div>
+
+        <div class="login body oculto">
+            <form class="caixa" onsubmit="logar(event)">
+                <h2>BEM VINDO</h2>
+                <div class="user">
+                    <label for="usuario">Usuario</label><br>
+                    <input id="usuario" name="email" type="text">
+                </div>
+                <div class="senha">
+                    <label for="senha">Senha</label><br>
+                    <input id="senha" name="senha" type="password">
+                    <div class="texto">
+                        <p>Esqueci a senha</p><br>
+                    </div>
+                    <div class="texto">
+                        <p>Cadastrar-se</p>
+                    </div>
+                </div>
+                <div class="botao">
+                    <button>Logar</button>
+                </div>
+            </form>
         </div>
     </div>
 

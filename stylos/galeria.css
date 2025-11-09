@@ -1,0 +1,78 @@
+h2 {
+  color: white;
+  font-size: 44px;
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+main {
+  margin-top: 10%;
+  margin-left: 10%;
+  justify-self: flex-start;
+}
+
+.titulo {
+  margin-bottom: 1em;
+}
+
+/* === CONTAINER PRINCIPAL === */
+.conteiner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.3em;
+}
+
+/* === BLOCO DE CADA CARD === */
+.caixinhas {
+  position: relative;
+  margin-left: -35px; /* cria sobreposição */
+  transition: transform 0.3s ease, z-index 0.3s ease;
+}
+
+/* === O CARD EM SI === */
+.caixinha {
+  width: 80px;
+  height: 300px;
+  border: 1px solid white;
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.05);
+  position: relative;
+}
+
+/* === IMAGEM DENTRO DO CARD === */
+.caixinha img {
+  width: 140%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  position: relative; /* NÃO usar absolute aqui */
+  left: -20%;
+  transition: transform 0.3s ease;
+}
+
+/* === EFEITO AO PASSAR O MOUSE === */
+.caixinhas:hover {
+  transform: scale(1.1);
+  z-index: 5;
+}
+
+/* === SETAS === */
+#turnback,
+#next {
+  margin: 0 60px;
+  align-self: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+#turnback:hover,
+#next:hover {
+  transform: scale(1.1);
+}
+
+/* === GRUPOS DE ESPAÇAMENTO === */
+.gap {
+  margin-left: 80px;
+}

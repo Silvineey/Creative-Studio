@@ -9,6 +9,7 @@ body{
     background-size: cover;
 }
 .caixa{
+    margin-right: 65px;
     display: flex;
     flex-direction: column;
     align-items: center;

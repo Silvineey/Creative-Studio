@@ -1,69 +1,53 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-}
-body{
+.body{
     background: url("../assets/Rectangle\ 7.png");
     width: 100%;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    position: absolute;
+    top: 20%;
+    left: 28%;
+    right: 50%;
+    z-index: 998;
+    width: 900px;
+    padding: 1em;
+    border-radius: 30px;
+    color: white;
 }
-.conteiner{
+
+.caixa h2{
+    font-weight: 800;
+    color: white;
+    text-align: center;
+    font-size: 128px;
+}   
+.login{
     display: flex;
     justify-content: center;
 }
 .caixa{
-    color: #FFFFFF;
-    background-color: #4C545C;
-    align-items: center;
-    width: 600px;
-    border-radius: 25px;
-    padding: 5em;
-    border: black 1px solid;
+    text-align: center;
     display: flex;
     flex-direction: column;
-    gap: 2em;
+}
+
+.user label{
+    margin-right: 15%;
+    font-weight: 900;
+}
+.senha label{
+    margin-right: 15%;
+    font-weight: 900;
 }
 .caixa input{
-    border: none;
     border-radius: 25px;
-    padding: 0.5em;
-    width: 200px;
+    padding: 0.3em;
 }
-
-h1{
-    font-size: 110px;
-    color: white;
-    margin: 0.4em;
-    text-align: center;
-
-}
-.texto{
-    font-weight: 600;
-    color: #FFFFFF;
-    display: flex;
-    justify-content: end;
-}
-.texto p{
-    margin-top:2px ;
-    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
-}
-.texto p:hover{
-    transform: translateX(-5px);
-    cursor: pointer;
-    text-decoration: underline;
+.senha{
+    margin-top: 2em;
 }
 .botao button{
-    background-color: rgb(48, 144, 222);
-    padding: 0.8em;
-    color: white;
-    font-weight: 800;
+    padding: 0.5em;
     border-radius: 25px;
-}
-.botao button:hover{
-    background-color: rgb(91, 212, 228);
     cursor: pointer;
 }
