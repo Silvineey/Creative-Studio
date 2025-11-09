@@ -17,6 +17,9 @@ function renderlogin(){
   formulario.classList.remove("oculto")
   formulario.classList.add("ativo")
 }
+window.rendermenu = rendermenu;
+window.sumir = sumir;
+window.renderlogin = renderlogin;
 
 
 
