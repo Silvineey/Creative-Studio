@@ -77,7 +77,7 @@ async function logar(event){
 
 function logout(){
   localStorage.removeItem("token")
-  window.location.href="../index.html"
+  window.location.href="https://silvineey.github.io/Creative-Studio/"
 }
 
 
