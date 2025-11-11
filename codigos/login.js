@@ -43,9 +43,9 @@ document.addEventListener("DOMContentLoaded",()=>{
     navbar.innerHTML= `
       <li><a href="index.html">Início</a></li>
       <li><a href="./paginas/criacao.html">Criação</a></li>
-      <li><a href="galeria.html">Galeria</a></li>
+      <li><a href="./paginas/galeria.html">Galeria</a></li>
       <li><a href="desenvolvedor.html">Área do desenvolvedor</a></li>
-      <li><a href="sobre.html">Sobre</a></li>
+      <li><a>Sobre</a></li>
       <li><a onclick="logout()">Sair</a></li>`;
   }
 })
