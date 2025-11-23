@@ -7,10 +7,8 @@
     <title>Creative Studio</title>
     <link rel="stylesheet" href="stylos/header.css">
     <link rel="stylesheet" href="stylos/home.css">
-    <link rel="stylesheet" href="stylos/login.css">
     <script src="codigos/login.js" defer></script>
 </head>
-
 <body>
     <div class="background">
         <header>
@@ -19,16 +17,9 @@
             </div>
             <nav>
                 <ol class="navbar">
-                    <li><a href="index.html">Início</a></li>
-                    <li><a>Sobre</a></li>
-                    <li onmouseleave="sumir()" onmouseover="rendermenu()" class="sublogin">
-                        <a>Logar</a>
-                        <ol  class="opcoes oculto">
-                            <p>Já é membro?</p>
-                            <li><a onclick="renderlogin()">Logar</a></li>
-                            <li><a href="">Cadastrar</a></li>
-                        </ol>
-                    </li>
+                    <ol class="submenu">
+
+                    </ol>
                 </ol>
             </nav>
         </header>
@@ -36,7 +27,7 @@
             <img src="assets/Personagens.png" alt="">
         </div>
         <div class="cinza">
-            <div class="login">
+            <div>
                 <img src="assets/logo.png" alt="">
             </div>
             <div>
@@ -51,30 +42,22 @@
                     para dar vida a cada visão <br> criativa.
                 </p>
             </div>
-        </div>
 
-        <div class="login body oculto">
-            <form class="caixa" onsubmit="logar(event)">
-                <h2>BEM VINDO</h2>
-                <div class="user">
-                    <label for="usuario">Usuario</label><br>
-                    <input id="usuario" name="usuario" type="text">
-                </div>
-                <div class="senha">
-                    <label for="senha">Senha</label><br>
-                    <input id="senha" name="senha" type="password">
-                    <div class="texto">
-                        <p>Esqueci a senha</p><br>
-                    </div>
-                    <div class="texto">
-                        <p>Cadastrar-se</p>
-                    </div>
-                </div>
-                <div class="botao">
-                    <button>Logar</button>
-                </div>
-            </form>
         </div>
     </div>
+    <div class="login off">
+        <button onclick="fechar()">X</button>
+        <form onsubmit="logar(event)">
+            <h2>Usuário e senha</h2>
+            <Label for="usuario">Usuario</Label>
+            <input id="usuario" type="text" required name="usuario">
+            <Label for="senha">Senha</Label>
+            <input type="password" id="senha" required name="senha">
+            <p id="resetsenha">Esqueci a senha</p>
+            <p id="cadastro">Cadastrar-se</p>
+            <button>Logar</button>
+        </form>
+    </div>
 </body>
+
 </html>

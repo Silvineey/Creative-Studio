@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina de criação</title>
+    <link rel="stylesheet" href="../stylos/header.css">
+    <link rel="stylesheet" href="../stylos/criacao.css">
+    <script defer src="../codigos/jogador.js"></script>
+</head>
+
+<body>
+    <header>
+        <div style="margin-left: 10%;" class="img">
+            <img src="../assets/logo1.png" alt="">
+        </div>
+        <nav>
+            <ol class="navbar">
+                <li><a href="../index.html">Voltar</a></li>
+
+            </ol>
+        </nav>
+    </header>
+
+    <main>
+        <div class="menu">
+            <div class="caixa">
+                <h2>Você já jogou RPG?</h2>
+            </div>
+            <div class="botoes">
+                <div><button onclick="iniciante()">Nunca joguei RPG</button></div>
+                <div><button>Tive pouca experiência com RPG</button></div>
+                <div><button>Jogo RPG frequentemente</button></div>
+            </div>
+        </div>
+        
+        <div class="conteiner novato off">
+            <div class="titulo">
+                <h2>Escolha sua classe</h2>
+            </div>
+            <div class="classes">
+                <img onclick="evento(event)" data-value="1" src="../assets/fisica.png" title="Classes fisicas" alt=""></button>
+                <img onclick="evento(event)" data-value="2" src="../assets/magica.png" alt="">
+                <img src="../assets/login.png" onclick="evento(event)" data-value="3" alt="">
+            </div>
+            <div id="fisica" class="botoes off">
+
+            </div>
+            <div class="botoes off" id="magica">
+
+            </div>
+            <div class="botoes off" id="hibrida">
+
+            </div>
+        </div>
+    </main>
+
+
+
+</body>
+
+</html>

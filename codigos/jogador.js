@@ -18,154 +18,61 @@ const classes={
 }
 
 function jogador(){
-    window.location.href="../paginas/jogador.html";
+    window.location.href="../paginas/novato.html";
 }
-function novato(){
-    const menu=document.querySelector(".menu");
-    const novato=document.querySelectorAll(".novato");
-    menu.classList.add("oculto");
-    menu.style.display="none";
+
+function iniciante(){
+    const menu=document.querySelector(".menu")
+    const novatos=document.querySelector(".novato")
+    menu.classList.add("off")
     setTimeout(() => {
-        rendernovato()
-        novato.forEach(novatos=>{
-            novatos.classList.remove("oculto");
-            novatos.classList.add("ativo");
-        })
-    }, 500);
-}
-
-function casual(){
-    const menu=document.querySelector(".menu");
-    const casual=document.querySelectorAll(".casual")
-    menu.classList.add("oculto")
-    menu.style.display="none"
+        menu.style.display="none"
+    }, 200);
     setTimeout(() => {
-        rendercasual()
-        casual.forEach(casuais=>{
-            casuais.classList.remove("oculto")
-            casuais.classList.add("ativo")
-        })
-    }, 500);
+        novatos.classList.remove("off")
+    }, 300);
+
 }
-function experiente(){
-    const menu=document.querySelector(".menu");
-    const experiente=document.querySelectorAll(".experiente")
-    menu.classList.add("oculto")
-    menu.style.display="none"
-    setTimeout(() => {
-        renderexperiente()
-        experiente.forEach(experientes=>{
-            experientes.classList.remove("oculto")
-            experientes.classList.add("ativo")
-        })
-    }, 500);
-}
-
-
-
-function rendernovato(){
-    const classesf=classes.iniciante.fisicas;
-    const classesm=classes.iniciante.magicas;
-    const classesh=classes.iniciante.hibrido;
-    const divf=document.getElementById("nfisicas");
-    const divm=document.getElementById("nmagicas");
-    const divh=document.getElementById("nhibridas");
-
-    classesf.forEach((classesf,i)=>{
-        const selecao=document.createElement("button");
-        selecao.innerHTML=classesf;
-        selecao.value=i+1;
-        divf.appendChild(selecao);
-    });
-    classesm.forEach((classesm,i)=>{
-        const selecao=document.createElement("button");
-        selecao.innerHTML=classesm;
-        selecao.value=i+7;
-        divm.appendChild(selecao);
-    });
-    classesh.forEach((classesh,i)=>{
-        const selecao=document.createElement("button");
-        selecao.innerHTML=classesh;
-        selecao.value=i+10;
-        divh.appendChild(selecao);
-    });
-}
-
-function rendercasual(){
-    const classef=classes.casual.fisicas;
-    const classesm=classes.casual.magicas;
-    const classesh=classes.casual.hibrido;
-    const divf=document.getElementById("cfisica");
-    const divm=document.getElementById("cmagica");
-    const divh=document.getElementById("chibrida");
-    const novato=document.querySelectorAll(".novato");
-    novato.forEach(n=>{
-        n.style.display="none"
+function evento(e){
+    const valor=e.target.dataset.value
+    const fisicasn=classes.iniciante.fisicas
+    const magicasn=classes.iniciante.magicas
+    const hibridasn=classes.iniciante.hibrido
+    const divfisica=document.getElementById("fisica")
+    const divmagica=document.getElementById("magica")
+    const divhibrida=document.getElementById("hibrida")
+    const divs=[divfisica,divmagica,divhibrida]
+    divs.forEach(div=>{
+        div.innerHTML=""
+        div.classList.remove("on")
+        div.classList.add("off")
     })
-    classef.forEach((classesf,i)=>{
-        const selecao=document.createElement("button")
-        selecao.innerHTML=classesf
-        selecao.value=i+1
-        divf.appendChild(selecao)
-    });
-    classesm.forEach((classesm,i)=>{
-        const selecao=document.createElement("button")
-        selecao.innerHTML=classesm
-        selecao.value=i+10
-        divm.appendChild(selecao)
-    });
-    classesh.forEach((classesh,i)=>{
-        const selecao=document.createElement("button")
-        selecao.innerHTML=classesh
-        selecao.value=i+18
-        divh.appendChild(selecao)
-    });
+    console.log(valor)
+    if(valor==="1"){
+        divfisica.classList.add("on")
+        divfisica.classList.remove("off")
+        fisicasn.forEach(classesfn=>{
+            const selecao=document.createElement("button")
+            selecao.innerHTML=classesfn
+            divfisica.appendChild(selecao)
+        });
+    }
+    if(valor==="2"){
+        divmagica.classList.add("on")
+        divmagica.classList.remove("off")
+        magicasn.forEach(classesmn=>{
+            const selecao=document.createElement("button")
+            selecao.innerHTML=classesmn
+            divmagica.appendChild(selecao)
+        });
+    }
+        if(valor==="3"){
+        divhibrida.classList.add("on")
+        divhibrida.classList.remove("off")
+        hibridasn.forEach(classeshn=>{
+            const selecao=document.createElement("button")
+            selecao.innerHTML=classeshn
+            divhibrida.appendChild(selecao)
+        });
+    }
 }
-function renderexperiente(){
-    const classef=classes.experiente.fisicas;
-    const classesm=classes.experiente.magicas;
-    const classesh=classes.experiente.hibrido;
-    const divf=document.getElementById("efisica");
-    const divm=document.getElementById("emagica");
-    const divh=document.getElementById("ehibrida");
-    const novato=document.querySelectorAll(".novato");
-    const casual=document.querySelectorAll(".casual")
-    novato.forEach(n=>{
-        n.style.display="none"
-    })
-    casual.forEach(c=>{
-        c.style.display="none"
-    })
-    classef.forEach((classesf,i)=>{
-        const selecao=document.createElement("button")
-        selecao.innerHTML=classesf
-        selecao.value=i+1
-        divf.appendChild(selecao)
-    });
-    classesm.forEach((classesm,i)=>{
-        const selecao=document.createElement("button")
-        selecao.innerHTML=classesm
-        selecao.value=i+10
-        divm.appendChild(selecao)
-    });
-    classesh.forEach((classesh,i)=>{
-        const selecao=document.createElement("button")
-        selecao.innerHTML=classesh
-        selecao.value=i+18
-        divh.appendChild(selecao)
-    });
-}
-
-
-
-//function galeria(indice){
-//let id=indice.value;
-//console.log(id);
-//    const img=document.querySelectorAll(".personagens img");
-//    img.forEach(imgs=>{
-//        imgs.classList.add("oculto");
-//        imgs.classList.remove("ativo");
-//    })
-//    img[id-1].classList.remove("oculto");
-//    img[id-1].classList.add("ativo");
-//}

@@ -6,26 +6,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Página de Cadastro</title>
   <link rel="stylesheet" href="../stylos/login.css">
-  <script defer src="codigos/login.js"></script>
+  <script defer src="../codigos/login.js"></script>
 </head>
 
-<body>
-  <h1>Bem-vindo</h1>
-  <h2>Cadastro</h2>
-
+<body class="cadastro">
+  <div>
+    <a href="../index.htmls">voltar</a>
+  </div>
+  
+  
   <div class="container">
+    <h2 class="h2c">Cadastro</h2>
     <form class="caixa" onsubmit="cadastrar(event)">
       <div>
         <label for="cadastroUsuario">Usuário</label><br>
-        <input autocomplete="username" required id="cadastroUsuario" name="usuario" type="text" required>
+        <input placeholder="Usuario" autocomplete="username" required id="cadastroUsuario" name="usuario" type="text" required>
       </div>
       <div>
         <label for="cadastroEmail">Email</label><br>
-        <input autocomplete="email" required id="cadastroEmail" type="email">
+        <input placeholder="Email" autocomplete="email" required id="cadastroEmail" type="email">
       </div>
       <div>
         <label for="cadastroSenha">Senha</label><br>
-        <input required autocomplete="new-password" id="cadastroSenha" name="senha" type="password" required>
+        <input placeholder="Senha" required autocomplete="new-password" id="cadastroSenha" name="senha" type="password" required>
       </div>
       <div class="botao">
         <button type="submit">Cadastrar</button>

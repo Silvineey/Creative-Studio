@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     margin-top: 1em;
-    z-index: 999;
+    z-index: 998;
     position: relative;
     z-index: 3;
 }
@@ -27,4 +27,68 @@
 .cinza img:hover{
     transform: translateY(-10px);
     cursor: pointer;
+}
+.login{
+    padding: 1em;
+    border-radius: 25px;
+    background-color: grey;
+    position: absolute;
+    right: 1%;
+    top: 15%;
+    z-index: 999;
+}
+.login form{
+    display: flex;
+    flex-direction: column;
+}
+.login h2{
+    text-align: center;
+    font-size: 30px;
+}
+.login label{
+    font-weight: 600;
+    margin-left: 8px;
+}
+.login input{
+    padding: 0.4em;
+    border-radius: 25px;
+    border: none;
+    color: black;
+    font-weight: 600px;
+}
+.login p{
+    font-weight: 600;
+    text-align: right;
+}
+.login button{
+    margin-top: 25px;
+    border-radius: 25px;
+    border: none;
+    background-color: rgb(50, 50, 231);
+    padding: 0.5em;
+}
+.login button:hover{
+    background-color: blue;
+}
+#cadastro{
+    cursor: pointer;
+    transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+#cadastro:hover{
+    text-decoration: underline;
+    transform: translateX(-5px);
+}
+#resetsenha{
+    cursor: pointer;
+    transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+#resetsenha:hover{
+    text-decoration: underline;
+    transform: translateX(-5px);
+}
+.off{
+    transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
 }

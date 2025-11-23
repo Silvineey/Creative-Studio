@@ -1,57 +1,111 @@
-function rendermenu(){
-  console.log("passou o mouse")
-  const menu=document.querySelector(".opcoes")
-  menu.classList.remove("oculto")
-  menu.classList.add("ativo")
-  menu.style.display="inline-block"
+function renderlogin() {
+  const menu=document.querySelector(".login")
+  menu.classList.remove("off")
 }
-function sumir(){
-  const menu=document.querySelector(".opcoes")
-  setTimeout(() => {
-    menu.classList.remove("ativo")
-    menu.classList.add("oculto")
-  }, 3000);
+
+// =====================================================
+// FUNÇÃO: Buscar dados do usuário logado no backend
+// =====================================================
+async function getUsuario() {
+  const token = localStorage.getItem("token");
+  if (!token) return null;
+
+  try {
+    const resposta = await fetch("http://127.0.0.1:5000/avatar", {
+      method: "GET",
+      headers: {
+        Authorization: "Bearer " + token
+      }
+    });
+
+    if (!resposta.ok) return null;
+
+    return await resposta.json();
+  } catch (erro) {
+    console.error("Erro ao buscar usuário:", erro);
+    return null;
+  }
 }
-function renderlogin(){
-  const formulario=document.querySelector(".body")
-  formulario.classList.remove("oculto")
-  formulario.classList.add("ativo")
+
+// =====================================================
+// FUNÇÃO DE LOGOUT (CASO USE NO MENU DEPOIS)
+// =====================================================
+function logout() {
+  localStorage.removeItem("token");
+  window.location.reload();
 }
-window.rendermenu = rendermenu;
-window.sumir = sumir;
-window.renderlogin = renderlogin;
 
+// =====================================================
+// MONTAGEM DO NAVBAR
+// =====================================================
+document.addEventListener("DOMContentLoaded", async () => {
+  const token = localStorage.getItem("token");
+  const navbar = document.querySelector(".navbar");
 
-
-
-document.addEventListener("DOMContentLoaded",()=>{
-  const token=localStorage.getItem("token");
-  const navbar=document.querySelector(".navbar");
-  if(!token){
-    navbar.innerHTML=`
+  // Caso não esteja logado
+  if (!token) {
+    navbar.innerHTML = `
       <li><a href="index.html">Início</a></li>
       <li><a href="sobre.html">Sobre</a></li>
-      <li onmouseleave="sumir()" onmouseover="rendermenu()" class="sublogin">
-          <a>Logar</a>
-          <ol class="opcoes oculto">
-              <p>Já é membro?</p>
-              <li><a onclick="renderlogin()">Logar</a></li>
-              <li><a href="">Cadastrar</a></li>
-          </ol>
-      </li>`;
-  }else{
-    navbar.innerHTML= `
-      <li><a href="index.html">Início</a></li>
-      <li><a href="./paginas/criacao.html">Criação</a></li>
-      <li><a href="./paginas/galeria.html">Galeria</a></li>
-      <li><a href="desenvolvedor.html">Área do desenvolvedor</a></li>
-      <li><a>Sobre</a></li>
-      <li><a onclick="logout()">Sair</a></li>`;
+      <li>
+        <a onclick="renderlogin()"><img src="./assets/avatar.png" alt=""></a><br>
+        <a onclick="renderlogin()">Login</a>
+      </li>
+    `;
+    return;
   }
-})
 
-async function logar(event){
-  event.preventDefault()
+  // ================================
+  // Carrega o usuário logado
+  // ================================
+  const usuario = await getUsuario();
+
+  // Se token expirou ou inválido
+  if (!usuario) {
+    localStorage.removeItem("token");
+    window.location.reload();
+    return;
+  }
+
+  // ================================
+  // Navbar quando está logado
+  // ================================
+  navbar.innerHTML = `
+    <li><a href="index.html">Início</a></li>
+    <li><a href="./paginas/criacao.html">Criação</a></li>
+    <li><a href="./paginas/galeria.html">Galeria</a></li>
+    <li><a href="./paginas/desenvolvedor.html">Área do desenvolvedor</a></li>
+    <li><a href="#">Sobre</a></li>
+
+    <li class="sublogin">
+      <a><img src="./assets/avatar.png" alt=""></a>
+      <img class="setinha" src="assets/setinha.png" alt="">
+      <div class="caixa">
+        <p>${usuario.nome_usuario}</p>
+        <p>${usuario.email}</p>
+        <button onclick="logout()" class="logout-btn">Sair</button>
+      </div>
+    </li>
+  `;
+});
+
+async function getUsuario() {
+    const token = localStorage.getItem("token");
+    if (!token) return null;
+
+    const resposta = await fetch("http://127.0.0.1:5000/avatar", {
+        method: "GET",
+        headers: { "Authorization": "Bearer " + token }
+    });
+
+    if (!resposta.ok) return null;
+
+    return resposta.json();
+}
+
+
+async function logar(e){
+  e.preventDefault()
   const usuario=document.getElementById("usuario").value
   const senha=document.getElementById("senha").value
 
@@ -87,8 +141,8 @@ function logout(){
 
 
 
-async function cadastrar(evento){
-  evento.preventDefault()
+async function cadastrar(e){
+  e.preventDefault()
   const usuario=document.getElementById("cadastroUsuario").value
   const email=document.getElementById("cadastroEmail").value
   const senha=document.getElementById("cadastroSenha").value
@@ -100,7 +154,8 @@ async function cadastrar(evento){
     });
     const dados=await resposta.json()
     if(resposta.ok){
-      alert("Usuario cadastrado com sucesso")
+      window.alert("usuario criado com sucesso.. redirecionando")
+      window.location.href="../index.html"
     }
     else{
       alert("Erro"+dados.erro||dados.mensagem)
